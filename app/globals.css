@@ -2,32 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap");
+
+@font-face {
+  font-family: "Cursive";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../public/fonts/LaLuxesScript.ttf") format("truetype");
+}
+
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+  --color-primary: #3a4642;
+  --color-secondary: #777e54;
+  --color-link: #ba6748;
+  --color-light: #fffbf4;
+  --color-gray-50: #f3f0e9;
+  --color-gray-100: #e7e5de;
+  --color-gray-200: #cecec8;
+  --color-gray-300: #b6b8b2;
+  --color-gray-400: #9da19b;
+  --color-gray-500: #848b86;
+  --color-gray-600: #6b7470;
+  --color-gray-700: #535d59;
+  --color-gray-800: #3a4642;
+  --color-gray-900: #22302d;
+  --color-dark: #091a18;
 }
