@@ -12,7 +12,7 @@ const Photo: FC<PhotoProps> = ({ photo }) => {
   return (
     <div
       className="relative bg-white shadow-lg p-4"
-      style={{ transform: `rotate(${rotation}deg)`, padding: '10px' }}
+      style={{ transform: `rotate(${rotation}deg)` }}
     >
       <img src={src} alt={alt} className="w-full h-auto" />
     </div>
