@@ -15,7 +15,7 @@ const PhotoStack: FC<PhotoStackProps> = ({ images }) => {
           className="col-start-1 row-start-1"
           style={{ zIndex: index }}
         >
-          <Photo src={image.src} alt={image.alt} />
+          <Photo photo={image} />
         </div>
       ))}
     </div>
