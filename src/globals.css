@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Libre Baskerville';
+  src: url('./assets/fonts/libre-baskerville.regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'La Luxes';
+  src: url('./assets/fonts/LaLuxesScript.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+:root {
+  --primary-50: #f6f7f7;
+  --primary-100: #e1e6e4;
+  --primary-200: #c2cdc8;
+  --primary-300: #9caca6;
+  --primary-400: #768b83;
+  --primary-500: #5c7069;
+  --primary-600: #485953;
+  --primary-700: #3a4642;
+  --primary-800: #333c3a;
+  --primary-900: #2d3432;
+  --primary-950: #171c1b;
+}
+
+@layer utilities {
+  .font-primary {
+    font-family: 'Libre Baskerville', serif;
+  }
+
+  .font-secondary {
+    font-family: 'La Luxes', cursive;
+  }
+
+  .filter-primary-scale {
+    filter: grayscale(0.8) brightness(0.9) sepia(0.7) hue-rotate(160deg);
+  }
+}
