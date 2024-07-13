@@ -12,7 +12,6 @@ const NavLike: React.FC = () => {
   const { shownSection, setShownSection, sections } = content;
 
   const handleClick = (name: string) => {
-    console.log('Setting shown section to:', name);
     setShownSection(name);
   };
 

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { PaymentModalState } from '../../helpers/types';
-import { error } from 'console';
 
 interface PaymentModalProps {
   state: PaymentModalState;

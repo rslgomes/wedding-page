@@ -10,7 +10,6 @@ const HomePage: React.FC = () => {
   }
 
   const { sections, shownSection } = content;
-  console.log('Current shown section:', shownSection);
 
   return (
     <div>

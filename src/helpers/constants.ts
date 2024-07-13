@@ -25,69 +25,24 @@ export const GIFTS: Gift[] = [
 
 export const GUEST_LIST: Guest[] = [
   {
+    id: '001',
     name: 'Carlos Eduardo Gomes',
     keywords: ['dudu', 'irmao'],
-    bundle: 'casaFamilia',
+    bundle: 'DuduEFamilia',
     confirmed: undefined,
   },
   {
+    id: '002',
     name: 'Tiago Gomes',
     keywords: ['irmao'],
     bundle: 'tiagoECynara',
     confirmed: undefined,
   },
   {
+    id: '003',
     name: 'Cynara Quintão',
     keywords: ['cunhada', 'seguranca', 'trabalho', 'do'],
     bundle: 'tiagoECynara',
-    confirmed: undefined,
-  },
-  {
-    name: 'Tetê',
-    keywords: ['sobrinha', 'tiago', 'maria', 'teresa'],
-    bundle: 'tiagoECynara',
-    confirmed: undefined,
-  },
-  {
-    name: 'Cynara Quintão',
-    keywords: ['cunhada', 'seguranca', 'trabalho', 'do'],
-    bundle: 'tiagoECynara',
-    confirmed: undefined,
-  },
-  {
-    name: 'Cynara Quintão',
-    keywords: ['cunhada', 'seguranca', 'trabalho', 'do'],
-    bundle: 'tiagoECynara',
-    confirmed: undefined,
-  },
-  {
-    name: 'Cynara Quintão',
-    keywords: ['cunhada', 'seguranca', 'trabalho', 'do'],
-    bundle: 'tiagoECynara',
-    confirmed: undefined,
-  },
-  {
-    name: 'Cynara Quintão',
-    keywords: ['cunhada', 'seguranca', 'trabalho', 'do'],
-    bundle: 'tiagoECynara',
-    confirmed: undefined,
-  },
-  {
-    name: 'Barbara Scarlet',
-    keywords: ['Babita'],
-    bundle: 'babitaERamon',
-    confirmed: undefined,
-  },
-  {
-    name: 'Namorado da Lorraine',
-    keywords: ['Guilherme', 'Primo'],
-    bundle: 'GuilhermeRenata',
-    confirmed: undefined,
-  },
-  {
-    name: 'Lorraine',
-    keywords: ['Guilherme'],
-    bundle: 'GuilhermeRenata',
     confirmed: undefined,
   },
 ];
