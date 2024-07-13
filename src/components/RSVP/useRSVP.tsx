@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { GUEST_LIST } from '../../helpers/constants';
 import { Guest } from '../../helpers/types';
 const useRSVP = () => {
@@ -6,6 +6,20 @@ const useRSVP = () => {
   const [searchInput, setSearchInput] = useState('');
   const [filteredList, setFilteredList] = useState<Guest[]>([]);
   const [selectedGuest, setSelectedGuest] = useState<Guest | null>(null);
+
+  useEffect(() => {
+    const fetchGuestList = async () => {
+      try {
+        const response = await fetch('url');
+        const data = await response.json();
+        setGuestList(data);
+      } catch (error) {
+        console.error('Error fetching guest list: ', error);
+      }
+    };
+
+    fetchGuestList();
+  }, []);
 
   const filterGuestList = useCallback(
     (input: string) => {
@@ -26,13 +40,10 @@ const useRSVP = () => {
     setSearchInput('');
   }, []);
 
-  const handleInputChange = useCallback(
-    (value: string) => {
-      setSearchInput(value);
-      filterGuestList(value);
-    },
-    [filterGuestList]
-  );
+  const handleInputChange = (value: string) => {
+    setSearchInput(value);
+    filterGuestList(value);
+  };
 
   const handleSelectGuest = useCallback((guest: Guest) => {
     setSelectedGuest(guest);

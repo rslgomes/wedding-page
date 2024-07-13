@@ -19,8 +19,14 @@ export interface PaymentModalState {
 }
 
 export interface Guest {
+  id: string;
   name: string;
   keywords: string[];
   bundle: string;
   confirmed: boolean | undefined;
+}
+
+export interface Photo {
+  src: string;
+  alt: string;
 }
