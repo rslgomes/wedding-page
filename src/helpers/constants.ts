@@ -1,4 +1,4 @@
-import { Gift, Guest } from './types';
+import { Gift, Guest, Photo } from './types';
 
 export const TIME_OF_THE_EVENT = new Date('2024-10-25T19:00:00Z');
 
@@ -35,14 +35,75 @@ export const GUEST_LIST: Guest[] = [
     id: '002',
     name: 'Tiago Gomes',
     keywords: ['irmao'],
-    bundle: 'tiagoECynara',
+    bundle: 'tiagoEFamilia',
     confirmed: undefined,
   },
   {
     id: '003',
     name: 'Cynara Quintão',
     keywords: ['cunhada', 'seguranca', 'trabalho', 'do'],
-    bundle: 'tiagoECynara',
+    bundle: 'tiagoEFamilia',
     confirmed: undefined,
+  },
+  {
+    id: '004',
+    name: 'Maurício Hamaji',
+    keywords: ['hamaji', 'mau'],
+    bundle: 'FamiliaHamaji',
+    confirmed: undefined,
+  },
+  {
+    id: '005',
+    name: 'Lucia Aiko Hamaji',
+    keywords: [],
+    bundle: 'FamiliaHamaji',
+    confirmed: undefined,
+  },
+  {
+    id: '006',
+    name: 'Ruy Oyama Homma',
+    keywords: [],
+    bundle: 'FamiliaHamaji',
+    confirmed: undefined,
+  },
+  {
+    id: '007',
+    name: 'Clara Fonseca',
+    keywords: [],
+    bundle: 'FamiliaHamaji',
+    confirmed: undefined,
+  },
+  {
+    id: '008',
+    name: 'Bernardo Villaça',
+    keywords: ['mr. ham', 'presunto', 'pre pre', 'presuntinho'],
+    bundle: 'PresuntoEFram',
+    confirmed: undefined,
+  },
+  {
+    id: '009',
+    name: 'Marina Fram',
+    keywords: ['Fram', 'mrs.ham'],
+    bundle: 'PresuntoEFram',
+    confirmed: undefined,
+  },
+  {
+    id: '010',
+    name: 'Maria Teresa',
+    keywords: ['sobrinha'],
+    bundle: 'tiagoEFamilia',
+    confirmed: undefined,
+  },
+];
+
+export const PHOTO_LIST: Photo[] = [
+  { src: require('../assets/img/amorReiDoPastel.png'), alt: 'Chuchus no Rei' },
+  {
+    src: require('../assets/img/beijoLaicos.png'),
+    alt: 'Aniversário da Babita',
+  },
+  {
+    src: require('../assets/img/ChurrascoChromos.png'),
+    alt: 'Churrasco do Chromos',
   },
 ];
