@@ -43,3 +43,17 @@
     filter: grayscale(0.8) brightness(0.9) sepia(0.7) hue-rotate(160deg);
   }
 }
+
+.fade-in {
+  transition: opacity 1s ease-in-out;
+  opacity: 0;
+}
+
+.fade-in.visible {
+  opacity: 1;
+}
+
+.filter-primary-scale {
+  filter: grayscale(1) contrast(1.2);
+  mix-blend-mode: multiply;
+}

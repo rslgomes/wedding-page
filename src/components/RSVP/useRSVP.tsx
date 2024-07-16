@@ -62,7 +62,7 @@ const useRSVP = () => {
     (updatedGuest: Guest, status: boolean) => {
       setGuestList((prevList) => {
         return prevList.map((guest) => {
-          const isUpdated = guest.name === updatedGuest.name;
+          const isUpdated = guest.id === updatedGuest.id;
           if (isUpdated) return { ...guest, confirmed: status };
           return guest;
         });
