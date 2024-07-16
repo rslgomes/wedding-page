@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/wedding-page/static/css/main.00898ab2.css",
-    "main.js": "/wedding-page/static/js/main.54a298b5.js",
-    "static/js/453.1ae9d50a.chunk.js": "/wedding-page/static/js/453.1ae9d50a.chunk.js",
-    "static/media/amorReiDoPastel.png": "/wedding-page/static/media/amorReiDoPastel.e0d225c0050a080b9b91.png",
-    "static/media/ChurrascoChromos.png": "/wedding-page/static/media/ChurrascoChromos.4020ecf9b51063826247.png",
-    "static/media/beijoLaicos.png": "/wedding-page/static/media/beijoLaicos.329c00a658e05450ba1f.png",
-    "static/media/libre-baskerville.regular.ttf": "/wedding-page/static/media/libre-baskerville.regular.79ca0ffb93959a378f3d.ttf",
-    "static/media/LaLuxesScript.ttf": "/wedding-page/static/media/LaLuxesScript.04c3298ed464a90246cb.ttf",
-    "index.html": "/wedding-page/index.html",
-    "main.00898ab2.css.map": "/wedding-page/static/css/main.00898ab2.css.map",
-    "main.54a298b5.js.map": "/wedding-page/static/js/main.54a298b5.js.map",
-    "453.1ae9d50a.chunk.js.map": "/wedding-page/static/js/453.1ae9d50a.chunk.js.map"
+    "main.css": "/static/css/main.b8330325.css",
+    "main.js": "/static/js/main.3036616e.js",
+    "static/js/453.1ae9d50a.chunk.js": "/static/js/453.1ae9d50a.chunk.js",
+    "static/media/amorReiDoPastel.png": "/static/media/amorReiDoPastel.e0d225c0050a080b9b91.png",
+    "static/media/ChurrascoChromos.png": "/static/media/ChurrascoChromos.4020ecf9b51063826247.png",
+    "static/media/beijoLaicos.png": "/static/media/beijoLaicos.329c00a658e05450ba1f.png",
+    "static/media/libre-baskerville.regular.ttf": "/static/media/libre-baskerville.regular.79ca0ffb93959a378f3d.ttf",
+    "static/media/LaLuxesScript.ttf": "/static/media/LaLuxesScript.04c3298ed464a90246cb.ttf",
+    "index.html": "/index.html",
+    "main.b8330325.css.map": "/static/css/main.b8330325.css.map",
+    "main.3036616e.js.map": "/static/js/main.3036616e.js.map",
+    "453.1ae9d50a.chunk.js.map": "/static/js/453.1ae9d50a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.00898ab2.css",
-    "static/js/main.54a298b5.js"
+    "static/css/main.b8330325.css",
+    "static/js/main.3036616e.js"
   ]
 }
