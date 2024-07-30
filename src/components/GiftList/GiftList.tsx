@@ -7,28 +7,28 @@ import { PaymentModalState } from '../../helpers/types';
 const GiftListDisplay: React.FC = () => {
   const [modalState, setModalState] = useState<PaymentModalState>({
     open: false,
-    qrcodeUrl: '',
-    link: '',
+    pix_src: '',
+    code: '',
   });
   const openModal = ({
-    qrcodeUrl,
-    link,
-  }: Pick<PaymentModalState, 'qrcodeUrl' | 'link'>) =>
+    pix_src,
+    code,
+  }: Pick<PaymentModalState, 'pix_src' | 'code'>) =>
     setModalState({
       open: true,
-      qrcodeUrl,
-      link,
+      pix_src,
+      code,
     });
   const closeModal = () =>
     setModalState({
       open: false,
-      qrcodeUrl: '',
-      link: '',
+      pix_src: '',
+      code: '',
     });
   return (
     <>
       <PaymentModal onClose={closeModal} state={modalState} />
-      <div className=" bg-secondary-100 overflow-y-scroll flex space-x-4 p-4">
+      <div className=" bg-primary-100 flex flex-wrap justify-center md:justify-start space-x-4 p-4">
         {GIFTS.map((gift) => (
           <GiftCard key={gift.name} gift={gift} openModal={openModal} />
         ))}

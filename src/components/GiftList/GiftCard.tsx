@@ -1,23 +1,33 @@
-import { generatePaymentData } from '../../helpers/functions';
+import React from 'react';
+import { COST_MODAL_DATA_MAP } from '../../helpers/constants';
 import { Gift, PaymentModalState } from '../../helpers/types';
 import GiftDescription from './GiftDescription';
 
 interface GiftCardProps {
   gift: Gift;
   openModal: ({
-    qrcodeUrl,
-    link,
-  }: Pick<PaymentModalState, 'qrcodeUrl' | 'link'>) => void;
+    pix_src,
+    code,
+  }: Pick<PaymentModalState, 'pix_src' | 'code'>) => void;
 }
 
 const GiftCard: React.FC<GiftCardProps> = ({ gift, openModal }) => {
   const { name, imageUrl, cost } = gift;
+
+  const handleButtonClick = () => {
+    if (typeof cost === 'number') {
+      openModal(COST_MODAL_DATA_MAP[cost]);
+    } else {
+      openModal(COST_MODAL_DATA_MAP['custom']);
+    }
+  };
+
   return (
     <div className="relative bg-primary-100 bg-opacity-30 rounded-lg shadow-lg overflow-hidden w-72 m-4">
       <img src={imageUrl} alt={name} className="w-full h-40 object-cover" />
       <button
         className="absolute top-2 right-2 bg-white bg-opacity-75 rounded-full p-2"
-        onClick={() => openModal(generatePaymentData(cost))}
+        onClick={handleButtonClick}
       >
         <h3 className="text-secondary-500">Comprar</h3>
       </button>

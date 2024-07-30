@@ -24,9 +24,3 @@ export const calculateTimeLeft = (targetDate: Date): TimeLeft => {
 
   return { months, days, hours, minutes, seconds };
 };
-
-export const generatePaymentData = (cost: number) => {
-  const qrcodeUrl = 'https://picsum.photos/200';
-  const link = `https://picsum.photos/200/${cost}`;
-  return { qrcodeUrl, link };
-};

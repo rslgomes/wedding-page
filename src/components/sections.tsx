@@ -1,4 +1,5 @@
 import GiftListDisplay from './GiftList/GiftList';
+import OurStory from './OurStory/OurStory';
 import RSVP from './RSVP/RSVP';
 import TimeAndPlace from './TimeAndPlace/TimeAndPlace';
 
@@ -19,10 +20,15 @@ const sections: Section[] = [
     component: <GiftListDisplay />,
     order_index: 2,
   },
+  // {
+  // name: 'RSVP',
+  // component: <RSVP />,
+  // order_index: 3,
+  // },
   {
-    name: 'RSVP',
-    component: <RSVP />,
-    order_index: 3,
+    name: 'Nossa História',
+    component: <OurStory />,
+    order_index: 2,
   },
 ];
 

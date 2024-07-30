@@ -9,13 +9,13 @@ export interface TimeLeft {
 export interface Gift {
   name: string;
   imageUrl: string;
-  cost: number;
+  cost: number | 'custom';
 }
 
 export interface PaymentModalState {
   open: boolean;
-  qrcodeUrl: string;
-  link: string;
+  pix_src: string;
+  code: string;
 }
 
 export interface Guest {
@@ -29,4 +29,14 @@ export interface Guest {
 export interface Photo {
   src: string;
   alt: string;
+}
+
+export interface CostModalData {
+  pix_src: string;
+  code: string;
+}
+
+export interface CostModalDataMap {
+  [key: number]: CostModalData;
+  custom: CostModalData;
 }
