@@ -1,11 +1,12 @@
 {
   "files": {
     "main.css": "/static/css/main.34bc8633.css",
-    "main.js": "/static/js/main.5071a27a.js",
+    "main.js": "/static/js/main.05e60648.js",
     "static/js/453.1ae9d50a.chunk.js": "/static/js/453.1ae9d50a.chunk.js",
     "static/media/ourStoryPhoto.png": "/static/media/ourStoryPhoto.fbeb042c6eedf32151c6.png",
     "static/media/amorReiDoPastel.png": "/static/media/amorReiDoPastel.e0d225c0050a080b9b91.png",
     "static/media/ChurrascoChromos.png": "/static/media/ChurrascoChromos.4020ecf9b51063826247.png",
+    "static/media/furniturePT.webp": "/static/media/furniturePT.5b73d7ff6f17a25b87b4.webp",
     "static/media/beijoLaicos.png": "/static/media/beijoLaicos.329c00a658e05450ba1f.png",
     "static/media/mirante.webp": "/static/media/mirante.397fa027947c5c4236a2.webp",
     "static/media/jantarzinho.webp": "/static/media/jantarzinho.39a4a673f653863ff49f.webp",
@@ -20,11 +21,11 @@
     "static/media/three_hundred_reais.png": "/static/media/three_hundred_reais.6fe1e06cf9471da8f3e4.png",
     "index.html": "/index.html",
     "main.34bc8633.css.map": "/static/css/main.34bc8633.css.map",
-    "main.5071a27a.js.map": "/static/js/main.5071a27a.js.map",
+    "main.05e60648.js.map": "/static/js/main.05e60648.js.map",
     "453.1ae9d50a.chunk.js.map": "/static/js/453.1ae9d50a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.34bc8633.css",
-    "static/js/main.5071a27a.js"
+    "static/js/main.05e60648.js"
   ]
 }
