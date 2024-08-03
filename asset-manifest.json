@@ -1,13 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.34bc8633.css",
-    "main.js": "/static/js/main.05e60648.js",
+    "main.css": "/static/css/main.15bb2012.css",
+    "main.js": "/static/js/main.7cf307b9.js",
     "static/js/453.1ae9d50a.chunk.js": "/static/js/453.1ae9d50a.chunk.js",
+    "static/media/photoList02.png": "/static/media/photoList02.965ebd8571e10f1bf987.png",
+    "static/media/photoList03.png": "/static/media/photoList03.d7079956edaf485ca667.png",
+    "static/media/photoList04.png": "/static/media/photoList04.147d42d7535485d370c0.png",
+    "static/media/photoList05.png": "/static/media/photoList05.dda4bd6b35351e25c238.png",
     "static/media/ourStoryPhoto.png": "/static/media/ourStoryPhoto.fbeb042c6eedf32151c6.png",
-    "static/media/amorReiDoPastel.png": "/static/media/amorReiDoPastel.e0d225c0050a080b9b91.png",
-    "static/media/ChurrascoChromos.png": "/static/media/ChurrascoChromos.4020ecf9b51063826247.png",
+    "static/media/photoList01.JPG": "/static/media/photoList01.3c7cb89499e041a981f1.JPG",
+    "static/media/photoList08.png": "/static/media/photoList08.839785f98daa41877e79.png",
     "static/media/furniturePT.webp": "/static/media/furniturePT.5b73d7ff6f17a25b87b4.webp",
-    "static/media/beijoLaicos.png": "/static/media/beijoLaicos.329c00a658e05450ba1f.png",
+    "static/media/photoList07.png": "/static/media/photoList07.329c00a658e05450ba1f.png",
+    "static/media/photoList06.png": "/static/media/photoList06.013ee1b216fec0ebc7a8.png",
     "static/media/mirante.webp": "/static/media/mirante.397fa027947c5c4236a2.webp",
     "static/media/jantarzinho.webp": "/static/media/jantarzinho.39a4a673f653863ff49f.webp",
     "static/media/cervejinha.webp": "/static/media/cervejinha.26ab6587411e5067f9e5.webp",
@@ -19,13 +24,14 @@
     "static/media/one_hundred_reais.png": "/static/media/one_hundred_reais.2e7e4b1baeb5cc51d57a.png",
     "static/media/five_hundred_reais.png": "/static/media/five_hundred_reais.e0958b657b86bd533b8e.png",
     "static/media/three_hundred_reais.png": "/static/media/three_hundred_reais.6fe1e06cf9471da8f3e4.png",
+    "static/media/oneThousandReais.png": "/static/media/oneThousandReais.8e13e207357aeb0e716e.png",
     "index.html": "/index.html",
-    "main.34bc8633.css.map": "/static/css/main.34bc8633.css.map",
-    "main.05e60648.js.map": "/static/js/main.05e60648.js.map",
+    "main.15bb2012.css.map": "/static/css/main.15bb2012.css.map",
+    "main.7cf307b9.js.map": "/static/js/main.7cf307b9.js.map",
     "453.1ae9d50a.chunk.js.map": "/static/js/453.1ae9d50a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.34bc8633.css",
-    "static/js/main.05e60648.js"
+    "static/css/main.15bb2012.css",
+    "static/js/main.7cf307b9.js"
   ]
 }
