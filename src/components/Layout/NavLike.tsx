@@ -17,7 +17,7 @@ const NavLike: React.FC = () => {
   };
 
   return (
-    <div className="flex w-full justify-between sticky items-center z-10 pl-2 lg:pl-4 bg-primary-100 top-0">
+    <div className="flex w-full justify-between sticky items-center z-10 pl-2 lg:pl-4 bg-primary-100 top-0 shadow-sm">
       <img src={logo} alt="logo" className="h-10 w-auto" />
       <div className="flex items-center lg:hidden">
         <button

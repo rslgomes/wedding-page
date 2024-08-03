@@ -19,11 +19,21 @@ export interface PaymentModalState {
 }
 
 export interface Guest {
-  id: string;
+  ID: string;
   name: string;
   keywords: string[];
   bundle: string;
   confirmed: boolean | undefined;
+}
+
+export interface RawGuest {
+  _id: string;
+  ID: string;
+  name: string;
+  keywords: string[];
+  bundle: string;
+  confirmed?: boolean | undefined;
+  __v: number;
 }
 
 export interface Photo {

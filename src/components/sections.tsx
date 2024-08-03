@@ -21,14 +21,14 @@ const sections: Section[] = [
     order_index: 2,
   },
   // {
-  // name: 'RSVP',
-  // component: <RSVP />,
-  // order_index: 3,
+  //   name: 'RSVP',
+  //   component: <RSVP />,
+  //   order_index: 3,
   // },
   {
     name: 'Nossa História',
     component: <OurStory />,
-    order_index: 2,
+    order_index: 4,
   },
 ];
 

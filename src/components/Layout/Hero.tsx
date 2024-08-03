@@ -20,12 +20,12 @@ const Hero = () => {
   }, []);
   const currentPhoto = PHOTO_LIST[currentPhotoIndex];
   return (
-    <div className="flex items-stretch justify-between bg-primary-100">
-      <div className="w-0 lg:w-2/3">
+    <div className="flex items-stretch justify-between bg-primary-100 min-h-screen">
+      <div className="w-0 h-screen lg:w-2/3">
         <img
           src={currentPhoto.src}
           alt={currentPhoto.alt}
-          className={`h-auto w-full object-cover fade-in custom-grayscale  ${
+          className={`w-full h-full object-cover fade-in custom-grayscale  ${
             visible ? 'visible' : ''
           }`}
         />
@@ -35,14 +35,14 @@ const Hero = () => {
           <img
             src={require('../../assets/img/leaves.png')}
             alt="decorative leaves"
-            className="absolute top-0 left-0 opacity-30 md:opacity-100"
+            className="absolute top-0 left-0 opacity-60 aspect-auto"
           />
           <img
             src={require('../../assets/img/leaves.png')}
             alt="decorative leaves"
-            className="absolute bottom-0 right-0 rotate-180"
+            className="absolute bottom-0 right-0 rotate-180 opacity-60 aspect-auto"
           />
-          <p className="font-secondary text-7xl lg:text-8xl text-secondary-500 text-center">
+          <p className="font-secondary text-6xl md:text-8xl lg:text-7xl xl:text-8xl text-secondary-500 text-center">
             Renata e Rodrigo
           </p>
         </div>

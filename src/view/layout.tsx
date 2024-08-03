@@ -8,7 +8,7 @@ const Layout: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
     <div className="flex flex-col min-h-screen bg-primary-100 ">
       <NavLike />
       <Hero />
-      <div className="flex-grow p-4">{children}</div>
+      <div className="flex-grow mt-10 p-4 min-h-screen-navbar">{children}</div>
     </div>
   );
 };

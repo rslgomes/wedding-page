@@ -4,6 +4,9 @@ module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
   theme: {
     extend: {
+      minHeight: {
+        'screen-navbar': 'calc(100vh - 4rem)',
+      },
       colors: {
         primary: {
           50: '#f6f7f7',

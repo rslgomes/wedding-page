@@ -26,13 +26,13 @@ const GuestModal: FC<GuestModalProps> = ({
   };
   if (!guest) return null;
   return (
-    <div className="fixed inset-0 bg-primary-950 bg-opacity-50 flex items-center justify-center z-50">
-      <div className="bg-primary-200 p-6 rounded-lg shadow-lg max-w-sm w-full flex flex-col flex-nowrap">
-        <p className="font-primary text-primary-700 mb-3">
+    <div className="fixed inset-0 bg-primary-950 bg-opacity-70 flex items-center justify-center z-50">
+      <div className="bg-gradient-to-br from-primary-200 to-primary-100 p-6 max-w-sm w-full flex flex-col flex-nowrap">
+        <p className="font-primary text-primary-500 mb-3">
           {guest.name}, confirme{' '}
-          {bundle.length > 1 ? 'as presenças' : 'presença'} abaixo
+          {bundle.length > 1 ? 'as presenças' : 'presença'} abaixo:
         </p>
-        <div className="flex-col space-y-2 bg-primary-100 py-3 px-2 shadow-primary-700 shadow-sm">
+        <div className="flex-col space-y-2 bg-primary-100 py-2 px-3 border border-primary-500">
           {bundle.map((guest) => (
             <div
               key={guest.name}
@@ -66,7 +66,7 @@ const GuestModal: FC<GuestModalProps> = ({
         </div>
         <button
           onClick={handleClose}
-          className="mt-4 bg-primary-200 text-primary-700 py-2 px-4 border-primary-700 border-2 rounded self-end w-min"
+          className="mt-4 bg-primary-100 text-primary-500 py-2 px-4 border-primary-500 border-2 rounded self-end w-min"
         >
           Fechar
         </button>

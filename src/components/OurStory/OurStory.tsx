@@ -20,7 +20,7 @@ const OurStory = () => {
           {`O pedido de casamento veio em Janeiro de 2023. Os chuchus viajaram pra Ubatuba e, nos moldes da série favorita da Renatinha, Rodrigo fez o pedido num farol a beira-mar.`}
         </p>
         <p className="text-md font-primary text-primary-700">
-          {`E agora, os nós estamos oficializando tudo nos preparando pra mais uma linda etapa em nossas vidas: vamos nos mudar pra Portugal e construir nossa vida lá!`}
+          {`E agora, nós estamos oficializando tudo nos preparando pra mais uma linda etapa em nossas vidas: vamos nos mudar pra Portugal e construir nossa vida lá!`}
         </p>
       </div>
       <img

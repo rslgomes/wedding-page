@@ -25,7 +25,7 @@ const PaymentModal: React.FC<PaymentModalProps> = ({ state, onClose }) => {
   };
 
   return (
-    <div className="fixed inset-0 bg-primary-950 bg-opacity-50 flex items-center justify-center z-50">
+    <div className="fixed inset-0 bg-primary-950 bg-opacity-80 flex items-center justify-center z-50">
       <div className="bg-primary-100 p-6 rounded-lg shadow-lg max-w-sm w-full flex flex-col flex-nowrap">
         <img
           src={pix_src}
@@ -53,7 +53,7 @@ const PaymentModal: React.FC<PaymentModalProps> = ({ state, onClose }) => {
         </div>
         <button
           onClick={onClose}
-          className="mt-4 bg-primary-100 text-primary-700 py-2 px-4 border-primary-700 border-2 rounded self-end w-min"
+          className="mt-4 bg-primary-100 text-primary-500 py-2 px-4 border-primary-500 border-2 rounded self-end w-min"
         >
           Fechar
         </button>
