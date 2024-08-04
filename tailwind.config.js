@@ -4,8 +4,14 @@ module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
   theme: {
     extend: {
+      height: {
+        'screen-scrollbar': 'calc(66.667vh - 3rem)',
+        'screen-scrollbar-lg': 'calc(66.667vh - 4rem)',
+        'screen/3': '33.3333vh',
+      },
       minHeight: {
-        'screen-navbar': 'calc(100vh - 4rem)',
+        'screen-navbar': 'calc(100vh - 3rem)',
+        'screen-navbar-lg': 'calc(100vh - 4rem)',
       },
       colors: {
         primary: {

@@ -2,7 +2,11 @@ import React, { useContext, useState } from 'react';
 import ContentContext from '../../contexts/ContentContext';
 import logo from '../../assets/img/logoWedding.png';
 
-const NavLike: React.FC = () => {
+interface NavLikeProps {
+  contentRef: React.RefObject<HTMLDivElement>;
+}
+
+const NavLike: React.FC<NavLikeProps> = ({ contentRef }) => {
   const content = useContext(ContentContext);
   const [isHamburguerOpen, setIsHamburguerOpen] = useState(false);
   if (!content) {
@@ -14,11 +18,15 @@ const NavLike: React.FC = () => {
   const handleClick = (name: string) => {
     setShownSection(name);
     setIsHamburguerOpen(false);
+    if (contentRef?.current)
+      contentRef.current.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
     <div className="flex w-full justify-between sticky items-center z-10 pl-2 lg:pl-4 bg-primary-100 top-0 shadow-sm">
-      <img src={logo} alt="logo" className="h-10 w-auto" />
+      <div onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+        <img src={logo} alt="logo" className="h-10 w-auto" />
+      </div>
       <div className="flex items-center lg:hidden">
         <button
           type="button"
