@@ -16,7 +16,7 @@ const Layout: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
       >
         {children}
       </div>
-      <div className="fixed h-screen-scrollbar lg:h-screen-scrollbar-lg w-2 top-10 lg:top-14 right-0">
+      <div className="fixed h-screen-scrollbar w-2 top-10 right-0 md:opacity-0">
         <ScrollBar />
       </div>
     </div>
