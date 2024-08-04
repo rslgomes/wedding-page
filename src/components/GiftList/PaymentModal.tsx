@@ -8,10 +8,10 @@ interface PaymentModalProps {
 
 const PaymentModal: React.FC<PaymentModalProps> = ({ state, onClose }) => {
   const [copied, setCopied] = useState(false);
-  const { open, qrcodeUrl, link } = state;
+  const { open, pix_src, code } = state;
   if (!open) return null;
   const handleCopyLink = () => {
-    navigator.clipboard.writeText(link).then(
+    navigator.clipboard.writeText(code).then(
       () => {
         setCopied(true);
         setTimeout(() => {
@@ -25,15 +25,15 @@ const PaymentModal: React.FC<PaymentModalProps> = ({ state, onClose }) => {
   };
 
   return (
-    <div className="fixed inset-0 bg-primary-950 bg-opacity-50 flex items-center justify-center z-50">
+    <div className="fixed inset-0 bg-primary-950 bg-opacity-80 flex items-center justify-center z-50">
       <div className="bg-primary-100 p-6 rounded-lg shadow-lg max-w-sm w-full flex flex-col flex-nowrap">
         <img
-          src={qrcodeUrl}
+          src={pix_src}
           alt="Payment QR Code"
           className="w-full h-auto mb-4"
         />
         <p className="text-gray-700 text-sm mb-4">
-          Escaneie o qrCode com seu celular ou clique no link para copiá-lo para
+          Escaneie o qrCode com seu celular ou clique abaixo para copiá-lo para
           a sua área de transferência
         </p>
         <div className="flex flex-row flex-nowrap justify-between">
@@ -41,7 +41,7 @@ const PaymentModal: React.FC<PaymentModalProps> = ({ state, onClose }) => {
             className="text-link break-words self-start hover:underline"
             onClick={handleCopyLink}
           >
-            {link}
+            Clique para copiar o QRCode
           </button>
           <p
             className={`text-secondary-400 transition-opacity duration-500 ${
@@ -53,7 +53,7 @@ const PaymentModal: React.FC<PaymentModalProps> = ({ state, onClose }) => {
         </div>
         <button
           onClick={onClose}
-          className="mt-4 bg-primary-100 text-primary-700 py-2 px-4 border-primary-700 border-2 rounded self-end w-min"
+          className="mt-4 bg-primary-100 text-primary-500 py-2 px-4 border-primary-500 border-2 rounded self-end w-min"
         >
           Fechar
         </button>

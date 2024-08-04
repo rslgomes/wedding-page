@@ -17,14 +17,10 @@ const RSVP: React.FC = () => {
   } = useRSVP();
   return (
     <>
-      <GuestModal
-        guest={selectedGuest}
-        bundle={selectedBundle}
-        handleClose={handleCloseModal}
-        updateGuestStatus={updateGuestStatus}
-        clearGuestStatus={clearGuestStatus}
-      />
-      <div className="text-center p-6 bg-secondary-100 flex flex-col">
+      <div className="text-start p-6 bg-primary-100 flex flex-col">
+        <h1 className="text-2xl font-primary text-primary-700 mb-5">
+          Confirmar presença
+        </h1>
         <GuestInput
           searchInput={searchInput}
           handleInputChange={handleInputChange}
@@ -34,6 +30,13 @@ const RSVP: React.FC = () => {
           handleSelect={handleSelectGuest}
         />
       </div>
+      <GuestModal
+        guest={selectedGuest}
+        bundle={selectedBundle}
+        handleClose={handleCloseModal}
+        updateGuestStatus={updateGuestStatus}
+        clearGuestStatus={clearGuestStatus}
+      />
     </>
   );
 };

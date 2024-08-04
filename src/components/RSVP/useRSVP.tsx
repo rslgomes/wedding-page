@@ -1,37 +1,47 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { GUEST_LIST } from '../../helpers/constants';
 import { Guest } from '../../helpers/types';
+import { treatGuestFromAPI } from '../../helpers/functions';
 const useRSVP = () => {
-  const [guestList, setGuestList] = useState<Guest[]>(GUEST_LIST);
+  const [guestList, setGuestList] = useState<Guest[]>(
+    GUEST_LIST.map(treatGuestFromAPI)
+  );
   const [searchInput, setSearchInput] = useState('');
   const [filteredList, setFilteredList] = useState<Guest[]>([]);
   const [selectedGuest, setSelectedGuest] = useState<Guest | null>(null);
 
-  useEffect(() => {
-    const fetchGuestList = async () => {
-      try {
-        const response = await fetch('url');
-        const data = await response.json();
-        setGuestList(data);
-      } catch (error) {
-        console.error('Error fetching guest list: ', error);
-      }
-    };
+  // useEffect(() => {
+  //   const fetchGuestList = async () => {
+  //     try {
+  //       const response = await fetch(
+  //         'https://chuchus-wedding-backend.onrender.com/guests'
+  //       );
+  //       const data = await response.json();
+  //       console.log(data);
+  //       // setGuestList(data);
+  //     } catch (error) {
+  //       console.error('Error fetching guest list: ', error);
+  //     }
+  //   };
 
-    fetchGuestList();
-  }, []);
+  //   fetchGuestList();
+  // }, []);
 
   const filterGuestList = useCallback(
     (input: string) => {
-      const withFilter = guestList.filter((guest) => {
-        return (
-          guest.name.toLowerCase().includes(input.toLowerCase()) ||
-          guest.keywords.some((keyword) =>
-            keyword.toLowerCase().includes(input.toLowerCase())
-          )
-        );
+      const withoutPlusOnes = guestList.filter((guest) => {
+        const isAcompanhante =
+          guest.name.toLowerCase().trim() === 'acompanhante';
+        return !isAcompanhante;
       });
-      setFilteredList(input.trim() ? withFilter : []);
+      const withFilter = withoutPlusOnes.filter((guest) => {
+        const { name, keywords = [] } = guest;
+        const includesInput = (word: string) =>
+          word.toLowerCase().includes(input.toLowerCase());
+
+        return includesInput(name) || keywords.some(includesInput);
+      });
+      setFilteredList(input.trim() === '' ? [] : withFilter);
     },
     [guestList]
   );
@@ -40,10 +50,13 @@ const useRSVP = () => {
     setSearchInput('');
   }, []);
 
-  const handleInputChange = (value: string) => {
-    setSearchInput(value);
-    filterGuestList(value);
-  };
+  const handleInputChange = useCallback(
+    (value: string) => {
+      setSearchInput(value);
+      filterGuestList(value);
+    },
+    [filterGuestList]
+  );
 
   const handleSelectGuest = useCallback((guest: Guest) => {
     setSelectedGuest(guest);
@@ -62,7 +75,7 @@ const useRSVP = () => {
     (updatedGuest: Guest, status: boolean) => {
       setGuestList((prevList) => {
         return prevList.map((guest) => {
-          const isUpdated = guest.id === updatedGuest.id;
+          const isUpdated = guest.ID === updatedGuest.ID;
           if (isUpdated) return { ...guest, confirmed: status };
           return guest;
         });

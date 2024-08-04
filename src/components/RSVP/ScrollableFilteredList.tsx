@@ -11,11 +11,11 @@ const ScrollableInteractiveList: FC<ScrollableInteractiveListProps> = ({
   handleSelect,
 }) => {
   return (
-    <div className="bg-primary-200 p-2 h-40 rounded overflow-y-scroll text-start">
+    <div className="bg-primary-200 bg-opacity-30 p-2 h-40 rounded overflow-y-scroll text-start">
       {filteredList.map((guest) => {
         return (
           <div
-            key={guest.name}
+            key={guest.ID}
             onClick={() => handleSelect(guest)}
             className="cursor-pointer p-2 border-b border-b-primary-300"
           >
