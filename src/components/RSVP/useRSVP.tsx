@@ -1,39 +1,37 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import { GUEST_LIST } from '../../helpers/constants';
 import { Guest } from '../../helpers/types';
-import { treatGuestFromAPI } from '../../helpers/functions';
+import { fetchGuests, updateBundle } from '../../api/requests';
 const useRSVP = () => {
-  const [guestList, setGuestList] = useState<Guest[]>(
-    GUEST_LIST.map(treatGuestFromAPI)
-  );
+  const [guestList, setGuestList] = useState<Guest[]>();
   const [searchInput, setSearchInput] = useState('');
   const [filteredList, setFilteredList] = useState<Guest[]>([]);
   const [selectedGuest, setSelectedGuest] = useState<Guest | null>(null);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
-  // useEffect(() => {
-  //   const fetchGuestList = async () => {
-  //     try {
-  //       const response = await fetch(
-  //         'https://chuchus-wedding-backend.onrender.com/guests'
-  //       );
-  //       const data = await response.json();
-  //       console.log(data);
-  //       // setGuestList(data);
-  //     } catch (error) {
-  //       console.error('Error fetching guest list: ', error);
-  //     }
-  //   };
+  useEffect(() => {
+    const fetchGuestList = async () => {
+      setIsLoading(true);
+      try {
+        const response = await fetchGuests();
+        setGuestList(response);
+      } catch (error) {
+        console.error(error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
 
-  //   fetchGuestList();
-  // }, []);
+    fetchGuestList();
+  }, []);
 
   const filterGuestList = useCallback(
     (input: string) => {
-      const withoutPlusOnes = guestList.filter((guest) => {
-        const isAcompanhante =
-          guest.name.toLowerCase().trim() === 'acompanhante';
-        return !isAcompanhante;
-      });
+      const withoutPlusOnes =
+        guestList?.filter((guest) => {
+          const isAcompanhante =
+            guest.name.toLowerCase().trim() === 'acompanhante';
+          return !isAcompanhante;
+        }) ?? [];
       const withFilter = withoutPlusOnes.filter((guest) => {
         const { name, keywords = [] } = guest;
         const includesInput = (word: string) =>
@@ -68,17 +66,36 @@ const useRSVP = () => {
 
   const selectedBundle = useMemo(() => {
     if (!selectedGuest) return [];
-    return guestList.filter((guest) => guest.bundle === selectedGuest.bundle);
+    return (
+      guestList?.filter((guest) => guest.bundle === selectedGuest.bundle) ?? []
+    );
   }, [selectedGuest, guestList]);
+
+  const handleBundleSubmit = useCallback(
+    async (selectedBundle: Guest[]) => {
+      setIsLoading(true);
+      try {
+        await updateBundle(selectedBundle);
+        handleCloseModal();
+      } catch (error) {
+        console.error(error);
+      } finally {
+        setIsLoading(false);
+      }
+    },
+    [handleCloseModal]
+  );
 
   const updateGuestStatus = useCallback(
     (updatedGuest: Guest, status: boolean) => {
       setGuestList((prevList) => {
-        return prevList.map((guest) => {
-          const isUpdated = guest.ID === updatedGuest.ID;
-          if (isUpdated) return { ...guest, confirmed: status };
-          return guest;
-        });
+        return (
+          prevList?.map((guest) => {
+            const isUpdated = guest._id === updatedGuest._id;
+            if (isUpdated) return { ...guest, confirmed: status };
+            return guest;
+          }) ?? []
+        );
       });
     },
     []
@@ -86,11 +103,13 @@ const useRSVP = () => {
 
   const clearGuestStatus = useCallback((clearedGuest: Guest) => {
     setGuestList((prevList) => {
-      return prevList.map((guest) => {
-        const isUpdated = guest.name === clearedGuest.name;
-        if (isUpdated) return { ...guest, confirmed: undefined };
-        return guest;
-      });
+      return (
+        prevList?.map((guest) => {
+          const isUpdated = guest._id === clearedGuest._id;
+          if (isUpdated) return { ...guest, confirmed: undefined };
+          return guest;
+        }) ?? []
+      );
     });
   }, []);
 
@@ -101,10 +120,12 @@ const useRSVP = () => {
     filteredList,
     selectedGuest,
     selectedBundle,
+    isLoading,
     handleSelectGuest,
     handleCloseModal,
     updateGuestStatus,
     clearGuestStatus,
+    handleBundleSubmit,
   };
 };
 

@@ -11,7 +11,7 @@ const GuestInput: FC<GuestInputProps> = ({
 }) => {
   return (
     <input
-      className="bg-primary-100 border border-primary-300 h-8 p-2 text-primary-950 mb-4 focus:border-primary-500 focus:bg-primary-200 focus:bg-opacity-30 placeholder-primary-300 w-full lg:w-max"
+      className="font-primary bg-primary-100 rounded border border-primary-300 h-8 p-2 text-primary-950 mb-4 focus:border-primary-500 focus:bg-primary-200 focus:bg-opacity-30 placeholder-primary-300 max-w-sm"
       placeholder="Quem é você?"
       type="text"
       value={searchInput}

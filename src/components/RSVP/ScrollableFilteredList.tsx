@@ -10,14 +10,18 @@ const ScrollableInteractiveList: FC<ScrollableInteractiveListProps> = ({
   filteredList,
   handleSelect,
 }) => {
+  const firstFive = filteredList.slice(0, 5);
   return (
-    <div className="bg-primary-200 bg-opacity-30 p-2 h-40 rounded overflow-y-scroll text-start">
-      {filteredList.map((guest) => {
+    <div className="font-primary bg-primary-200 bg-opacity-30 p-2 h-min-content min-h-12 text-start">
+      {firstFive.map((guest, idx, array) => {
+        const isLast = idx === array.length - 1;
         return (
           <div
-            key={guest.ID}
+            key={guest._id}
             onClick={() => handleSelect(guest)}
-            className="cursor-pointer p-2 border-b border-b-primary-300"
+            className={`cursor-pointer p-2 ${
+              isLast ? '' : 'border-b border-b-primary-300'
+            } `}
           >
             {guest.name}
           </div>

@@ -20,11 +20,11 @@ const sections: Section[] = [
     component: <GiftListDisplay />,
     order_index: 2,
   },
-  // {
-  //   name: 'RSVP',
-  //   component: <RSVP />,
-  //   order_index: 3,
-  // },
+  {
+    name: 'RSVP',
+    component: <RSVP />,
+    order_index: 3,
+  },
   {
     name: 'Nossa História',
     component: <OurStory />,

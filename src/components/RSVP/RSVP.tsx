@@ -1,3 +1,4 @@
+import Skeleton from '../shared/Skeleton';
 import GuestInput from './GuestInput';
 import GuestModal from './GuestModal';
 import ScrollableInteractiveList from './ScrollableFilteredList';
@@ -14,6 +15,8 @@ const RSVP: React.FC = () => {
     handleCloseModal,
     updateGuestStatus,
     clearGuestStatus,
+    handleBundleSubmit,
+    isLoading,
   } = useRSVP();
   return (
     <>
@@ -21,21 +24,27 @@ const RSVP: React.FC = () => {
         <h1 className="text-2xl font-primary text-primary-700 mb-5">
           Confirmar presença
         </h1>
-        <GuestInput
-          searchInput={searchInput}
-          handleInputChange={handleInputChange}
-        />
+        {isLoading ? (
+          <Skeleton />
+        ) : (
+          <GuestInput
+            searchInput={searchInput}
+            handleInputChange={handleInputChange}
+          />
+        )}
         <ScrollableInteractiveList
           filteredList={filteredList}
           handleSelect={handleSelectGuest}
         />
       </div>
       <GuestModal
+        isLoading={isLoading}
         guest={selectedGuest}
         bundle={selectedBundle}
         handleClose={handleCloseModal}
         updateGuestStatus={updateGuestStatus}
         clearGuestStatus={clearGuestStatus}
+        handleBundleSubmit={handleBundleSubmit}
       />
     </>
   );

@@ -5,7 +5,7 @@ import {
   ONE_MONTH,
   ONE_SECOND,
 } from './constants';
-import { Guest, RawGuest, TimeLeft } from './types';
+import { TimeLeft } from './types';
 
 export const wait = async (timeMS: number): Promise<void> => {
   return new Promise((resolve) => setTimeout(resolve, timeMS));
@@ -23,9 +23,4 @@ export const calculateTimeLeft = (targetDate: Date): TimeLeft => {
   });
 
   return { months, days, hours, minutes, seconds };
-};
-
-export const treatGuestFromAPI = (rawGuest: RawGuest): Guest => {
-  const { name, keywords, _id, bundle, confirmed } = rawGuest;
-  return { name, ID: _id, bundle, keywords, confirmed };
 };

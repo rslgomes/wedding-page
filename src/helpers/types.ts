@@ -19,7 +19,7 @@ export interface PaymentModalState {
 }
 
 export interface Guest {
-  ID: string;
+  _id: string;
   name: string;
   keywords: string[];
   bundle: string;
@@ -28,7 +28,6 @@ export interface Guest {
 
 export interface RawGuest {
   _id: string;
-  ID: string;
   name: string;
   keywords: string[];
   bundle: string;

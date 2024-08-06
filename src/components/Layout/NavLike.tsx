@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import ContentContext from '../../contexts/ContentContext';
 import logo from '../../assets/img/logoWedding.png';
+import IconButton from '../shared/IconButton';
 
 interface NavLikeProps {
   contentRef: React.RefObject<HTMLDivElement>;
@@ -22,41 +23,42 @@ const NavLike: React.FC<NavLikeProps> = ({ contentRef }) => {
       contentRef.current.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const hamburgerIcon = (
+    <svg
+      className="w-6 h-6 text-primary-700"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+    >
+      {isHamburguerOpen ? (
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          d="M6 18L18 6M6 6l12 12"
+        />
+      ) : (
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          d="M4 6h16M4 12h16m-16 6h16"
+        />
+      )}
+    </svg>
+  );
+
   return (
     <div className="flex w-full justify-between sticky items-center z-10 pl-2 lg:pl-4 bg-primary-100 top-0 shadow-sm">
       <div onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
         <img src={logo} alt="logo" className="h-10 w-auto" />
       </div>
       <div className="flex items-center lg:hidden">
-        <button
-          type="button"
-          className="size-10"
+        <IconButton
           onClick={() => setIsHamburguerOpen(!isHamburguerOpen)}
-        >
-          <svg
-            className="w-6 h-6 text-primary-700"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            {isHamburguerOpen ? (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M6 18L18 6M6 6l12 12"
-              />
-            ) : (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h16m-16 6h16"
-              />
-            )}
-          </svg>
-        </button>
+          icon={hamburgerIcon}
+          className="size-10"
+        />
       </div>
       <div
         className={`flex-col lg:flex-row flex ${
