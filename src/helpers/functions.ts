@@ -24,3 +24,12 @@ export const calculateTimeLeft = (targetDate: Date): TimeLeft => {
 
   return { months, days, hours, minutes, seconds };
 };
+
+export const cleanName = (name: string) => {
+  return name
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^\w\s]/g, '')
+    .toLowerCase()
+    .trim();
+};

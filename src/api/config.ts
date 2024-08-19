@@ -6,6 +6,7 @@ export const routes = {
     enpoints: {
       GET_GUESTS: '/',
       PUT_UPDATE_BUNDLE: '/update-bundle',
+      ADD_BUNDLE: '/add-bundle',
     },
   },
 };
