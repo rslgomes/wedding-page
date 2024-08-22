@@ -24,7 +24,10 @@ const GiftCard: React.FC<GiftCardProps> = ({ gift, openModal }) => {
 
   return (
     <div className="relative bg-primary-100 bg-opacity-30 rounded-lg shadow-lg overflow-hidden w-72 m-4">
-      <img src={imageUrl} alt={name} className="w-full h-40 object-cover" />
+      <div>
+        <img src={imageUrl} alt={name} className="w-full h-40 object-cover" />
+        <div className="absolute inset-0 h-40 bg-gradient-to-tr from-transparent via-transparent to-primary-950"></div>
+      </div>
       <button
         className="absolute top-2 right-2 bg-white bg-opacity-75 rounded-full p-2"
         onClick={handleButtonClick}
