@@ -61,14 +61,14 @@ const GuestModal: FC<GuestModalProps> = ({
           {guest.name}, confirme{' '}
           {bundle.length > 1 ? 'as presenças' : 'presença'} abaixo:
         </p>
-        <div className="flex-col space-y-2">
+        <div className="flex-col space-y-2  max-h-72 overflow-y-auto pr-2 shadow-inner">
           {bundle.map((guest) => (
             <div
               key={guest.name}
               className="flex justify-between items-center w-full"
             >
               <p className="font-primary text-primary-700">{guest.name}</p>
-              <div className="space-x-4">
+              <div className="space-x-4 flex flex-nowrap">
                 <button
                   onClick={() => {
                     if (!isLoading) handleConfirmClick(guest);
@@ -107,7 +107,7 @@ const GuestModal: FC<GuestModalProps> = ({
             onClick={() => handleBundleSubmit(bundle)}
             className="mt-8 bg-primary-100 text-primary-500 py-2 px-4 border-primary-500 border-2 rounded self-end w-36"
           >
-            Fechar
+            Concluir
           </button>
         )}
       </div>

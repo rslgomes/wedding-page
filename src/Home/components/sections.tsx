@@ -21,7 +21,7 @@ const sections: Section[] = [
     order_index: 2,
   },
   {
-    name: 'RSVP',
+    name: 'Confirmar Presença',
     component: <RSVP />,
     order_index: 3,
   },

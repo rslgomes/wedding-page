@@ -42,12 +42,15 @@ const GuestList = () => {
   return (
     <>
       <div className="bg-primary-100 p-6 rounded-lg text-primary-950 shadow">
-        <button
-          className="border-none bg-primary-700 rounded p-2 px-4 text-primary-100 mb-8"
-          onClick={handleAddBundleClick}
-        >
-          Adicionar Convidados
-        </button>
+        <div className="flex flex-row items-center content-start space-x-12">
+          <button
+            className="border-none bg-primary-700 rounded p-2 px-4 text-primary-100 mb-8"
+            onClick={handleAddBundleClick}
+          >
+            Adicionar Convidados
+          </button>
+          <p>A lista atual tem {numberOfGuests} Convidados</p>
+        </div>
         <table className="min-w-full table-auto">
           <thead>
             <tr className="bg-primary-300">

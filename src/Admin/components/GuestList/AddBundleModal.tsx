@@ -95,7 +95,10 @@ const AddBundleModal: React.FC<AddBundleModalProps> = ({
                   cleanName(bundle).includes(cleanName(bundleName))
                 )
                 .map((bundle) => (
-                  <button onMouseDown={() => setBundleName(bundle)}>
+                  <button
+                    onMouseDown={() => setBundleName(bundle)}
+                    key={bundle}
+                  >
                     {bundle}
                   </button>
                 ))}
