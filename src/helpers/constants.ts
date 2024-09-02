@@ -4,7 +4,7 @@ import cervejinha from '../assets/img/giftList/cervejinha.webp';
 import mirante from '../assets/img/giftList/mirante.webp';
 import jantarzinho from '../assets/img/giftList/jantarzinho.webp';
 import casando from '../assets/img/giftList/casando.webp';
-import furniture from '../assets/img/giftList/furniturePT.webp';
+import furniture from '../assets/img/giftList/furniture.webp';
 
 export const TIME_OF_THE_EVENT = new Date('2024-10-25T19:00:00Z');
 
