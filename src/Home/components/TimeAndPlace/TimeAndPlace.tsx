@@ -1,13 +1,19 @@
-import { TIME_OF_THE_EVENT } from '../../../helpers/constants';
-import Countdown from './Countdown';
-import { LocationIframe } from './LocationIframe';
+import { TIME_OF_THE_EVENT } from "../../../helpers/constants";
+import Countdown from "./Countdown";
+import { LocationIframe } from "./LocationIframe";
 
 const TimeAndPlace: React.FC = () => {
   const now = new Date().getTime();
   const completed = now >= TIME_OF_THE_EVENT.getTime();
 
   return completed ? (
-    <h2 className="text-2xl font-primary text-primary-700">Começou!!!</h2>
+    // eslint-disable-next-line jsx-a11y/iframe-has-title
+    <iframe
+      id="webview"
+      src="https://hb-habit-auto-sb.auto.product.integrations.habit.io/bio?utm_source=test_source&utm_medium=test_medium&utm_content=test_content&utm_term=test_term&utm_campaign=test_campaign&client_id=test_client_id
+    "
+      className="w-full h-screen overflow-scroll"
+    ></iframe>
   ) : (
     <div className="text-center flex flex-col items-center mt-16">
       <h2 className="text-2xl font-primary text-primary-700 ">
